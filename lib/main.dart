@@ -12,8 +12,16 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // State untuk tema aplikasi
-  ThemeData _currentTheme = ThemeData.light();
+  // Set tema default menjadi Cinamoroll
+  ThemeData _currentTheme = ThemeData(
+    primarySwatch: Colors.blue,
+    scaffoldBackgroundColor: const Color.fromARGB(255, 199, 226, 239),
+    textTheme: const TextTheme(
+      bodyMedium: TextStyle(color: Colors.black, fontSize: 16),
+    ),
+  );
+  
+  // Set font default menjadi Sour
   TextStyle _currentTextStyle = const TextStyle(
     fontFamily: 'sour', // Nama font sesuai yang ada di pubspec.yaml
     fontSize: 20,
@@ -121,13 +129,13 @@ class MyHomePage extends StatelessWidget {
 
     if (Theme.of(context).scaffoldBackgroundColor == const Color.fromARGB(255, 199, 226, 239)) {
       imageAsset = 'lib/cinamoroll.jpg';
-      textBelow = 'Hi! I am Cinamoroll';
+      textBelow = 'Hi! I am Cinamoroll \n I can fly and my hobby is baking!';
     } else if (Theme.of(context).scaffoldBackgroundColor == const Color.fromARGB(255, 255, 204, 229)) {
       imageAsset = 'lib/mymelody.jpg';
-      textBelow = 'Hi! I am My Melody';
+      textBelow = 'Hi! I am My Melody \n I have a sister and my favourite color is pink!';
     } else if (Theme.of(context).scaffoldBackgroundColor == const Color.fromARGB(255, 255, 243, 204)) {
       imageAsset = 'lib/pompom.jpg';
-      textBelow = 'Hi! I am Pom Pom Purin';
+      textBelow = 'Hi! I am Pom Pom Purin \n I love treats and I collect a bunch of toys!';
     }
 
     return Scaffold(
@@ -179,8 +187,8 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  String _selectedTheme = 'Cinamoroll'; // Default tema
-  String _selectedFont = 'sour'; // Default font
+  String _selectedTheme = 'Cinamoroll'; 
+  String _selectedFont = 'sour'; 
 
   @override
   Widget build(BuildContext context) {

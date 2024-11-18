@@ -15,10 +15,10 @@ class _MyAppState extends State<MyApp> {
   // State untuk tema aplikasi
   ThemeData _currentTheme = ThemeData.light();
   TextStyle _currentTextStyle = const TextStyle(
-  fontFamily: 'sour', // Nama font sesuai yang ada di pubspec.yaml
-  fontSize: 20,
-  fontWeight: FontWeight.bold, // Optional, jika ingin mengatur berat font
-);
+    fontFamily: 'sour', // Nama font sesuai yang ada di pubspec.yaml
+    fontSize: 20,
+    fontWeight: FontWeight.bold, // Optional, jika ingin mengatur berat font
+  );
 
   // Daftar tema
   final ThemeData _cinamorollTheme = ThemeData(
@@ -59,7 +59,7 @@ class _MyAppState extends State<MyApp> {
           _currentTheme = _pomPomPurinTheme;
           break;
       }
-      // Mengubah font sesuai pilihan menggunakan Google Fonts
+      // Mengubah font sesuai pilihan
       _currentTextStyle = _getTextStyle(font);
     });
   }
@@ -69,28 +69,28 @@ class _MyAppState extends State<MyApp> {
     switch (font) {
       case 'Edu':
         return const TextStyle(
-        fontFamily: 'edu', // Nama font sesuai yang ada di pubspec.yaml
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-      );
+          fontFamily: 'edu', // Nama font sesuai yang ada di pubspec.yaml
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+        );
       case 'Sour':
         return const TextStyle(
-        fontFamily: 'sour', // Nama font sesuai yang ada di pubspec.yaml
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-      );
+          fontFamily: 'sour', // Nama font sesuai yang ada di pubspec.yaml
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+        );
       case 'Inconsolata':
         return const TextStyle(
-        fontFamily: 'inconsolata', // Nama font sesuai yang ada di pubspec.yaml
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-      );
+          fontFamily: 'inconsolata', // Nama font sesuai yang ada di pubspec.yaml
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+        );
       default:
         return const TextStyle(
-        fontFamily: 'Edu', // Nama font sesuai yang ada di pubspec.yaml
-        fontSize: 16,
-        fontWeight: FontWeight.normal,
-      );
+          fontFamily: 'Roboto', // Default font, misalnya Roboto
+          fontSize: 16,
+          fontWeight: FontWeight.normal,
+        );
     }
   }
 
@@ -175,7 +175,6 @@ class SettingsScreen extends StatefulWidget {
   const SettingsScreen({super.key, required this.onThemeChanged});
 
   @override
-  // ignore: library_private_types_in_public_api
   _SettingsScreenState createState() => _SettingsScreenState();
 }
 
@@ -237,8 +236,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
             ),
             RadioListTile<String>(
-              title: const Text('Roboto'),
-              value: 'Roboto',
+              title: const Text('Sour'),
+              value: 'Sour',
               groupValue: _selectedFont,
               onChanged: (value) {
                 setState(() {
@@ -248,8 +247,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
             RadioListTile<String>(
-              title: const Text('Lora'),
-              value: 'Lora',
+              title: const Text('Edu'),
+              value: 'Edu',
               groupValue: _selectedFont,
               onChanged: (value) {
                 setState(() {
@@ -259,8 +258,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
               },
             ),
             RadioListTile<String>(
-              title: const Text('Open Sans'),
-              value: 'OpenSans',
+              title: const Text('Inconsolata'),
+              value: 'Inconsolata',
               groupValue: _selectedFont,
               onChanged: (value) {
                 setState(() {
